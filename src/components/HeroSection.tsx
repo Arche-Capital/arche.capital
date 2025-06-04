@@ -8,6 +8,18 @@ const HeroSection = () => {
   const [email, setEmail] = useState("");
   const isMobile = useIsMobile();
   
+  const handleSubscribe = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    
+    let subscribeUrl = "https://capital.us15.list-manage.com/subscribe?u=d2aecfa5b269d4b5adde0d8b9&id=893697b209";
+    
+    if (email) {
+      subscribeUrl += `&MERGE0=${encodeURIComponent(email)}`;
+    }
+    
+    window.open(subscribeUrl, "_blank");
+  };
+
   return (
     <section className="min-h-[80vh] flex flex-col justify-center px-4 py-12">
       <div className="container mx-auto">
@@ -30,12 +42,33 @@ const HeroSection = () => {
           <div className="w-full">
             <div className="text-lg">
               <p>
-              We believe web3’s permissionless, open, financial infrastructure is the inevitable new foundation for global finance. At Arche Capital we are thesis-driven, long-term investors who seek to invest at the earliest stages in businesses and protocols at the forefront of this global shift.
+                We believe web3’s permissionless, open, financial infrastructure is the inevitable new foundation for global finance. At Arche Capital we are thesis-driven, long-term investors who seek to invest at the earliest stages in businesses and protocols at the forefront of this global shift.
               </p>
             </div>
           </div>
         </div>
-
+          
+        {/* Newsletter signup at the bottom */}
+        <div className="max-w-lg mx-auto mt-13">
+          <div className="flex flex-col items-center text-center">
+            <p className="text-sm mb-5">Sign up for the newsletter</p>
+            <div className="flex flex-col md:flex-row w-full gap-3">
+              <Input 
+                type="email" 
+                placeholder="Email address" 
+                className="flex-2"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+              <Button 
+                className="bg-arche-orange text-white hover:bg-arche-orange/89 transition-colors"
+                onClick={handleSubscribe}
+              >
+                Subscribe
+              </Button>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
