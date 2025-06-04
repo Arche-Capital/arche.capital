@@ -8,18 +8,6 @@ const HeroSection = () => {
   const [email, setEmail] = useState("");
   const isMobile = useIsMobile();
   
-  const handleSubscribe = (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault();
-    
-    let subscribeUrl = "https://capital.us15.list-manage.com/subscribe?u=d2aecfa5b269d4b5adde0d8b9&id=893697b209";
-    
-    if (email) {
-      subscribeUrl += `&MERGE0=${encodeURIComponent(email)}`;
-    }
-    
-    window.open(subscribeUrl, "_blank");
-  };
-
   return (
     <section className="min-h-[80vh] flex flex-col justify-center px-4 py-12">
       <div className="container mx-auto">
@@ -47,6 +35,7 @@ const HeroSection = () => {
             </div>
           </div>
         </div>
+
       </div>
     </section>
   );

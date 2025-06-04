@@ -2,6 +2,19 @@
 import { Button } from "@/components/ui/button";
 
 const ContactSection = () => {
+  
+  const handleSubscribe = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    
+    let subscribeUrl = "https://capital.us15.list-manage.com/subscribe?u=d2aecfa5b269d4b5adde0d8b9&id=893697b209";
+    
+    if (email) {
+      subscribeUrl += `&MERGE0=${encodeURIComponent(email)}`;
+    }
+    
+  window.open(subscribeUrl, "_blank");
+  };
+
   const handleContact = () => {
     window.location.href = "mailto:info@arche.capital";
   };
