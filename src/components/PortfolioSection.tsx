@@ -3,7 +3,7 @@ import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { useIsMobile } from "@/hooks/use-mobile";
 
-type Category = "ALL" | "INFRA" | "ZKP" | "FINTECH" | "DeAI";
+type Category = "ALL" | "INFRA" | "ZKP" | "FINTECH" | "DeAI" | "LIQUID";
 
 interface Company {
   name: string;
@@ -33,12 +33,15 @@ const companies: Company[] = [
   { name: "Bitmind", logo: "/DeAILogos/BitmindLogo.png", category: "DeAI" },
   { name: "Naptha AI", logo: "/DeAILogos/NapthaAILogo.png", category: "DeAI" },
   { name: "Taofu", logo: "/DeAILogos/TAOFU.png", category: "DeAI" },
-  { name: "Inference Labs", logo: "/DeAILogos/InferenceLabsLogo.png", category: "DeAI" }
+  { name: "Inference Labs", logo: "/DeAILogos/InferenceLabsLogo.png", category: "DeAI" },
+  { name: "SharpLink - SBET", logo: "/LiquidLogos/SharplinkLogo.png", category: "LIQUID" },
+  { name: "xTAO", logo: "/LiquidLogos/xTAOLogo.png", category: "LIQUID" },
+  { name: "Oranje", logo: "/LiquidLogos/OranjeLogo.png", category: "LIQUID" }
 ];
 
 const PortfolioSection = () => {
   const [activeCategory, setActiveCategory] = useState<Category>("ALL");
-  const categories: Category[] = ["ALL", "INFRA", "ZKP", "FINTECH", "DeAI"];
+  const categories: Category[] = ["ALL", "INFRA", "ZKP", "FINTECH", "DeAI", "LIQUID"];
   const isMobile = useIsMobile();
   
   // Filter for ALL category or specific category
