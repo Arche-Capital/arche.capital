@@ -36,7 +36,8 @@ const companies: Company[] = [
   { name: "Inference Labs", logo: "/DeAILogos/InferenceLabsLogo.png", category: "DeAI" },
   { name: "SharpLink - SBET", logo: "/LiquidLogos/SharplinkLogo.png", category: "LIQUID" },
   { name: "xTAO", logo: "/LiquidLogos/xTAOLogo.png", category: "LIQUID" },
-  { name: "Oranje", logo: "/LiquidLogos/OranjeLogo.png", category: "LIQUID" }
+  { name: "Oranje", logo: "/LiquidLogos/OranjeLogo.png", category: "LIQUID" },
+  { name: "BNC - ex Vape", logo: "/LiquidLogos/VapeLogo.png", category: "LIQUID" }
 ];
 
 const PortfolioSection = () => {
