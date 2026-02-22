@@ -21,6 +21,8 @@ const companies: Company[] = [
   { name: "Zealy", logo: "InfraLogos/ZealyLogo.png", category: "INFRA" },
   { name: "Cometh", logo: "/InfraLogos/ComethLogo.png", category: "INFRA" },
   { name: "Switchboard", logo: "InfraLogos/SwitchBoardLogo.png", category: "INFRA" },
+  { name: "Glacis", logo: "InfraLogos/GlacisLogo.png", category: "INFRA" },
+  { name: "Heron", logo: "InfraLogos/HeronLogo.png", category: "INFRA" },
   { name: "Risc Zero", logo: "/ZKPLogos/RiscZeroLogo.png", category: "ZKP" },
   { name: "Bermuda", logo: "/ZKPLogos/BermudaLogo.png", category: "ZKP" },
   { name: "Kakarot", logo: "/ZKPLogos/KakarotLogo.png", category: "ZKP" },
