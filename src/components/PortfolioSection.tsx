@@ -9,38 +9,39 @@ interface Company {
   name: string;
   logo: string; // Path to logo image
   category: Category | string; // Allow string to accommodate ALL category filter
+  url?: string;
 }
 
 // Updated companies with the new logos from the uploaded folder
 const companies: Company[] = [
-  { name: "Kintsu", logo: "InfraLogos/KintsuLogo.png", category: "INFRA" },
-  { name: "Solayer", logo: "/InfraLogos/SolayerLogo.png", category: "INFRA" },
-  { name: "Alluvial", logo: "/InfraLogos/AlluvialLogo.png", category: "INFRA" },
-  { name: "Squid Router", logo: "/InfraLogos/SquidRouterLogo.png", category: "INFRA" },
-  { name: "Dora", logo: "/InfraLogos/DoraLogo.png", category: "INFRA" },
-  { name: "Zealy", logo: "InfraLogos/ZealyLogo.png", category: "INFRA" },
-  { name: "Cometh", logo: "/InfraLogos/ComethLogo.png", category: "INFRA" },
-  { name: "Switchboard", logo: "InfraLogos/SwitchBoardLogo.png", category: "INFRA" },
-  { name: "Glacis", logo: "InfraLogos/GlacisLogo.png", category: "INFRA" },
-  { name: "Zama", logo: "InfraLogos/ZamaLogo.png", category: "INFRA" },
-  { name: "Risc Zero", logo: "/ZKPLogos/RiscZeroLogo.png", category: "ZKP" },
-  { name: "Bermuda", logo: "/ZKPLogos/BermudaLogo.png", category: "ZKP" },
-  { name: "Kakarot - Acquired", logo: "/ZKPLogos/KakarotLogo.png", category: "ZKP" },
-  { name: "Foundation", logo: "/FintechLogos/FoundationLogo.png", category: "FINTECH" },
-  { name: "Limited", logo: "/FintechLogos/LimitedLogo.png", category: "FINTECH" },
-  { name: "Hexagate - Acquired", logo: "/FintechLogos/HexagateLogo.png", category: "FINTECH" },
-  { name: "Aboslute Labs", logo: "/FintechLogos/AbsoluteLabsLogo.png", category: "FINTECH" },
-  { name: "Chainalysis", logo: "/FintechLogos/ChainalysisLogo.png", category: "FINTECH" },
-  { name: "SonarX", logo: "/FintechLogos/SonarXLogo.png", category: "FINTECH" },
-  { name: "Heron", logo: "FintechLogos/HeronLogo.png", category: "FINTECH" },
-  { name: "Bitmind", logo: "/DeAILogos/BitmindLogo.png", category: "DeAI" },
-  { name: "Naptha AI", logo: "/DeAILogos/NapthaAILogo.png", category: "DeAI" },
-  { name: "Taofu", logo: "/DeAILogos/TAOFU.png", category: "DeAI" },
-  { name: "Inference Labs", logo: "/DeAILogos/InferenceLabsLogo.png", category: "DeAI" },
-  { name: "SharpLink - SBET", logo: "/LiquidLogos/SharplinkLogo.png", category: "LIQUID" },
-  { name: "xTAO", logo: "/LiquidLogos/xTAOLogo.png", category: "LIQUID" },
-  { name: "Oranje", logo: "/LiquidLogos/OranjeLogo.png", category: "LIQUID" },
-  { name: "BNC - ex Vape", logo: "/LiquidLogos/VapeLogo.png", category: "LIQUID" }
+{ name: "Kintsu", logo: "InfraLogos/KintsuLogo.png", category: "INFRA", url: "https://kintsu.xyz" },
+{ name: "Solayer", logo: "/InfraLogos/SolayerLogo.png", category: "INFRA", url: "https://solayer.org" },
+{ name: "Alluvial", logo: "/InfraLogos/AlluvialLogo.png", category: "INFRA", url: "https://alluvial.finance" },
+{ name: "Squid Router", logo: "/InfraLogos/SquidRouterLogo.png", category: "INFRA", url: "https://squidrouter.com" },
+{ name: "Dora", logo: "/InfraLogos/DoraLogo.png", category: "INFRA", url: "https://www.ondora.xyz/" },
+{ name: "Zealy", logo: "InfraLogos/ZealyLogo.png", category: "INFRA", url: "https://zealy.io" },
+{ name: "Cometh", logo: "/InfraLogos/ComethLogo.png", category: "INFRA", url: "https://cometh.io" },
+{ name: "Switchboard", logo: "InfraLogos/SwitchBoardLogo.png", category: "INFRA", url: "https://switchboard.xyz" },
+{ name: "Glacis", logo: "InfraLogos/GlacisLogo.png", category: "INFRA", url: "https://glacislabs.com" },
+{ name: "Zama", logo: "InfraLogos/ZamaLogo.png", category: "INFRA", url: "https://www.zama.org/" },
+{ name: "Risc Zero", logo: "/ZKPLogos/RiscZeroLogo.png", category: "ZKP", url: "https://risczero.com" },
+{ name: "Bermuda", logo: "/ZKPLogos/BermudaLogo.png", category: "ZKP", url: "https://bermudabay.xyz/" },
+{ name: "Kakarot - Acquired", logo: "/ZKPLogos/KakarotLogo.png", category: "ZKP", url: "https://kakarot.org" },
+{ name: "Foundation", logo: "/FintechLogos/FoundationLogo.png", category: "FINTECH", url: "https://foundation.xyz" },
+{ name: "Limited", logo: "/FintechLogos/LimitedLogo.png", category: "FINTECH", url: "https://www.limitedapp.com" },
+{ name: "Hexagate - Acquired", logo: "/FintechLogos/HexagateLogo.png", category: "FINTECH", url: "https://hexagate.com" },
+{ name: "Aboslute Labs", logo: "/FintechLogos/AbsoluteLabsLogo.png", category: "FINTECH", url: "https://absolutelabs.io/" },
+{ name: "Chainalysis", logo: "/FintechLogos/ChainalysisLogo.png", category: "FINTECH", url: "https://chainalysis.com" },
+{ name: "SonarX", logo: "/FintechLogos/SonarXLogo.png", category: "FINTECH", url: "https://sonarx.com" },
+{ name: "Heron", logo: "FintechLogos/HeronLogo.png", category: "FINTECH", url: "https://tryheron.com" },
+{ name: "Bitmind", logo: "/DeAILogos/BitmindLogo.png", category: "DeAI", url: "https://bitmind.ai" },
+{ name: "Naptha AI", logo: "/DeAILogos/NapthaAILogo.png", category: "DeAI", url: "https://naptha.ai" },
+{ name: "Taofu", logo: "/DeAILogos/TAOFU.png", category: "DeAI", url: "https://taofu.xyz" },
+{ name: "Inference Labs", logo: "/DeAILogos/InferenceLabsLogo.png", category: "DeAI", url: "https://inferencelabs.com/" },
+{ name: "SharpLink - SBET", logo: "/LiquidLogos/SharplinkLogo.png", category: "LIQUID", url: "https://sharplink.com" },
+{ name: "xTAO", logo: "/LiquidLogos/xTAOLogo.png", category: "LIQUID", url: "https://www.xtao.co/" },
+{ name: "Oranje", logo: "/LiquidLogos/OranjeLogo.png", category: "LIQUID", url: "https://www.oranjebtc.com/" },
+{ name: "BNC - ex Vape", logo: "/LiquidLogos/VapeLogo.png", category: "LIQUID", url: "https://www.ceaindustries.com/" }
 ];
 
 const PortfolioSection = () => {
@@ -92,13 +93,20 @@ const PortfolioSection = () => {
       <div className={`grid ${getGridColumns()} gap-8 w-full max-w-5xl mx-auto justify-center`}>
         {filteredCompanies.map((company) => (
           <div key={company.name} className="flex flex-col items-center">
-            <div className="w-36 h-36 bg-white flex items-center justify-center mb-3 overflow-hidden rounded-md">
-              <img 
-                src={company.logo} 
-                alt={`${company.name} logo`}
-                className="w-full h-full object-contain p-2"
-              />
-            </div>
+            <a
+              href={company.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={company.url ? "hover:opacity-70 transition-opacity duration-200" : "pointer-events-none"}
+            >
+              <div className="w-36 h-36 bg-white flex items-center justify-center mb-3 overflow-hidden rounded-md">
+                <img 
+                  src={company.logo} 
+                  alt={`${company.name} logo`}
+                  className="w-full h-full object-contain p-2"
+                />
+              </div>
+            </a>
             <span className="text-xs font-medium">{company.name}</span>
           </div>
         ))}
