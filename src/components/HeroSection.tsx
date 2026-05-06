@@ -27,7 +27,7 @@ const HeroSection = () => {
         <div className="mb-12">
           {!isMobile && (
             <h1 className="text-3xl md:text-5xl font-medium text-center">
-              Arche Capital
+              Arche <br/> Capital
             </h1>
           )}
           
