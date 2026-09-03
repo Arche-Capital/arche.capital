@@ -20,7 +20,7 @@ const companies: Company[] = [
 { name: "Squid Router", logo: "/InfraLogos/SquidRouterLogo.png", category: "INFRA", url: "https://squidrouter.com" },
 { name: "Dora", logo: "/InfraLogos/DoraLogo.png", category: "INFRA", url: "https://www.ondora.xyz/" },
 { name: "Zealy", logo: "InfraLogos/ZealyLogo.png", category: "INFRA", url: "https://zealy.io" },
-{ name: "Cometh", logo: "/InfraLogos/ComethLogo.png", category: "INFRA", url: "https://cometh.io" },
+{ name: "Cometh - Acquired", logo: "/InfraLogos/ComethLogo.png", category: "INFRA", url: "https://cometh.io" },
 { name: "Switchboard", logo: "InfraLogos/SwitchBoardLogo.png", category: "INFRA", url: "https://switchboard.xyz" },
 { name: "Glacis", logo: "InfraLogos/GlacisLogo.png", category: "INFRA", url: "https://glacislabs.com" },
 { name: "Zama", logo: "InfraLogos/ZamaLogo.png", category: "INFRA", url: "https://www.zama.org/" },
@@ -34,6 +34,7 @@ const companies: Company[] = [
 { name: "Chainalysis", logo: "/FintechLogos/ChainalysisLogo.png", category: "FINTECH", url: "https://chainalysis.com" },
 { name: "SonarX", logo: "/FintechLogos/SonarXLogo.png", category: "FINTECH", url: "https://sonarx.com" },
 { name: "Heron", logo: "FintechLogos/HeronLogo.png", category: "FINTECH", url: "https://tryheron.com" },
+{ name: "Kaiko", logo: "/FintechLogos/KaikoLogo.png", category: "FINTECH", url: "https://www.kaiko.com/" },
 { name: "Bitmind", logo: "/DeAILogos/BitmindLogo.png", category: "DeAI", url: "https://bitmind.ai" },
 { name: "Naptha AI", logo: "/DeAILogos/NapthaAILogo.png", category: "DeAI", url: "https://naptha.ai" },
 { name: "Taofu", logo: "/DeAILogos/TAOFU.png", category: "DeAI", url: "https://taofu.xyz" },
@@ -41,7 +42,8 @@ const companies: Company[] = [
 { name: "SharpLink - SBET", logo: "/LiquidLogos/SharplinkLogo.png", category: "LIQUID", url: "https://sharplink.com" },
 { name: "xTAO", logo: "/LiquidLogos/xTAOLogo.png", category: "LIQUID", url: "https://www.xtao.co/" },
 { name: "Oranje", logo: "/LiquidLogos/OranjeLogo.png", category: "LIQUID", url: "https://www.oranjebtc.com/" },
-{ name: "BNC - ex Vape", logo: "/LiquidLogos/VapeLogo.png", category: "LIQUID", url: "https://www.ceaindustries.com/" }
+{ name: "BNC - ex Vape", logo: "/LiquidLogos/VapeLogo.png", category: "LIQUID", url: "https://www.ceaindustries.com/" },
+{ name: "Forward Industries", logo: "/LiquidLogos/ForwardIndustriesLogo.png", category: "LIQUID", url: "https://forwardindustries.com/" }
 ];
 
 const PortfolioSection = () => {

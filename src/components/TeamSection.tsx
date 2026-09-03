@@ -6,6 +6,8 @@ interface TeamMember {
   name: string;
   position: string;
   image: string;
+  linkedin?: string;
+  twitter?: string;
   experience: {
     company: string;
     role: string;
@@ -23,6 +25,8 @@ const teamMembers: TeamMember[] = [
     name: "Vanessa Grellet",
     position: "Managing Partner",
     image: "/lovable-uploads/grellet.png",
+    linkedin: "https://www.linkedin.com/in/vanessa-grellet-10852314",
+    twitter: "https://x.com/VanessaGrellet_",
     experience: [
       { company: "Aglaé Ventures", role: "Managing Partner" },
       { company: "CoinFund", role: "Head of Portfolio" },
@@ -53,6 +57,8 @@ const teamMembers: TeamMember[] = [
     name: "William Wolf",
     position: "Managing Partner",
     image: "/lovable-uploads/wolf.png",
+    linkedin: "https://www.linkedin.com/in/throughnothing",
+    twitter: "https://x.com/throughnothing",
     experience: [
       { company: "Polychain", role: "Partner" },
       { company: "Tilt.com (acq. Airbnb)", role: "Founding Team" },
@@ -77,35 +83,37 @@ const teamMembers: TeamMember[] = [
       { image: "/lovable-uploads/rackspace_logo.png", name: "Rackspace" },
       { image: "/lovable-uploads/polychain_capital_logo.png", name: "Polychain Capital" }
     ]
-  },
-  {
-    name: "Archish Mittal",
-    position: "Senior Associate",
-    image: "/lovable-uploads/mittal.png",
-    experience: [
-      { company: "R Ventures", role: "Founder & Executive Director" },
-      { company: "LE01 (QED, Ardent-backed)", role: "Founding Board Member" },
-      { company: "The Walt Disney Company (EMEA HQ)", role: "Finance" },
-      { company: "McLarty Associates", role: "Strategic Advisor" }
-    ],
-    skills: [
-      "FINTECH",
-      "VENTURE CAPITAL",
-      "FINANCE",
-      "PRODUCT GTM",
-      "BUSINESS STRATEGY"
-    ],
-    achievements: [
-      "Archish Mittal is a global finance professional with experience in fintech, venture capital, and advisory. He has held roles at LEO1, Walt Disney, and McLarty Associates. Archish holds a MBA from Cornell University and a Masters in International Law & Diplomacy from the Fletcher School."
-    ],
-    companyLogos: [
-      { image: "/lovable-uploads/leo1_logo.png", name: "LEO1" },
-      { image: "/lovable-uploads/walt_disney_logo.png", name: "Walt Disney" },
-      { image: "/lovable-uploads/r_ventures_logo.png", name: "R Ventures" },
-      { image: "/lovable-uploads/mclarty_logo.png", name: "McLarty" }
-    ]
   }
 ];
+
+const SocialLinks = ({ member }: { member: TeamMember }) => {
+  if (!member.linkedin && !member.twitter) return null;
+
+  return (
+    <div className="flex items-center justify-start gap-3 mt-2 text-sm">
+      {member.linkedin && (
+        <a
+          href={member.linkedin}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-gray-600 hover:text-arche-orange"
+        >
+          LinkedIn
+        </a>
+      )}
+      {member.twitter && (
+        <a
+          href={member.twitter}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-gray-600 hover:text-arche-orange"
+        >
+          X
+        </a>
+      )}
+    </div>
+  );
+};
 
 const TeamSection = () => {
   const isMobile = useIsMobile();
@@ -122,9 +130,8 @@ const TeamSection = () => {
       </h2>
       
       <div className="mt-10 w-full max-w-6xl mx-auto">
-        {/* First row with two team members */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-          {teamMembers.slice(0, 2).map((member, index) => (
+          {teamMembers.map((member, index) => (
             <div key={index} className="flex flex-col gap-4">
               {/* Member Name and Position */}
               <div className="text-center mb-2">
@@ -174,6 +181,8 @@ const TeamSection = () => {
               <div className="text-xs md:text-sm">
                 <p>{getAchievementSummary(member.achievements)}</p>
               </div>
+
+              <SocialLinks member={member} />
               
               {/* Company Logos - Reduced by 10% on mobile */}
               <div className="mt-2">
@@ -191,75 +200,6 @@ const TeamSection = () => {
               </div>
             </div>
           ))}
-        </div>
-        
-        {/* Second row with one centered team member */}
-        <div className="flex justify-center">
-          <div className={`${isMobile ? "w-full" : "max-w-xl"} flex flex-col gap-4`}>
-            {/* Member Name and Position */}
-            <div className="text-center mb-2">
-              <h3 className="text-2xl font-bold">{teamMembers[2].name}</h3>
-              <p className="text-lg text-gray-600">{teamMembers[2].position}</p>
-            </div>
-            
-            <div className={`flex ${isMobile ? "flex-row" : "flex-row"} gap-4`}>
-              {/* Member Image - Reduced size by 20% */}
-              <div className={`${isMobile ? "w-[28%]" : "w-[30%]"}`}>
-                <AspectRatio ratio={1/1} className="overflow-hidden">
-                  <img 
-                    src={teamMembers[2].image} 
-                    alt={teamMembers[2].name} 
-                    className="w-full h-full object-cover"
-                  />
-                </AspectRatio>
-              </div>
-              
-              {/* Experience and Skills */}
-              <div className={`${isMobile ? "w-[70%]" : "w-[70%]"} flex flex-col justify-between`}>
-                {/* Experience - Adjusted font size */}
-                <div className="mb-4">
-                  {teamMembers[2].experience.map((exp, i) => (
-                    <div key={i} className="mb-1 text-xs md:text-sm">
-                      <span className="font-bold">{exp.company}</span>
-                      <span className="text-gray-400"> – {exp.role}</span>
-                    </div>
-                  ))}
-                </div>
-                
-                {/* Skills - Now full width on mobile */}
-                <div className="flex flex-wrap gap-1 mb-4 w-full">
-                  {teamMembers[2].skills.map((skill, i) => (
-                    <Badge 
-                      key={i} 
-                      className="bg-arche-orange hover:bg-arche-orange text-white text-xs"
-                    >
-                      {skill}
-                    </Badge>
-                  ))}
-                </div>
-              </div>
-            </div>
-            
-            {/* Achievements as a single text */}
-            <div className="text-xs md:text-sm">
-              <p>{getAchievementSummary(teamMembers[2].achievements)}</p>
-            </div>
-            
-            {/* Company Logos - Reduced by 10% on mobile */}
-            <div className="mt-2">
-              <div className="flex flex-wrap gap-3">
-                {teamMembers[2].companyLogos.map((logo, i) => (
-                  <div key={i} className={`${isMobile ? "w-[63px] h-[63px]" : "w-[70px] h-[70px]"} md:w-[66px] md:h-[66px] bg-white overflow-hidden`}>
-                    <img 
-                      src={logo.image} 
-                      alt={`${logo.name}`} 
-                      className="w-full h-full object-contain"
-                    />
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </section>
